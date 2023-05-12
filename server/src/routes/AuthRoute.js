@@ -14,4 +14,15 @@ router.get(
     AuthController.googleCallback,
 );
 
+//check if user is logged in
+router.get(
+    "/login",
+    AuthController.getSession
+);
+
+router.get(
+    "/logout",
+    AuthController.logout
+)
+
 module.exports = router;
