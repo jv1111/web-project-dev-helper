@@ -27,7 +27,7 @@ const getSession = (req, res) => {
     }
 
     // get and send logged in user info
-    const { _id, email, username, emailVerified, createdAt } = req.user;
+    const { _id, email, username, createdAt } = req.user;
     const imgUrl = req.user.profileImg.url;
     res.status(200).json({
         success: true,
@@ -35,7 +35,6 @@ const getSession = (req, res) => {
             id: _id,
             email: email,
             username: username,
-            emailVerified: emailVerified,
             profileImg: imgUrl,
             createdAt: createdAt
         }

@@ -1,4 +1,6 @@
 const GoogleUserModel = require("../models/GoogleUserModel.js");
+const KeyModel = require("../models/KeyModel");
+const { keyGenerator } = require("../utils/keyGenerator.js");
 
 // google authentication
 const findOrCreate = async (userData) => {
@@ -15,7 +17,14 @@ const findOrCreate = async (userData) => {
             url: picture
         },
     });
+    const key = keyGenerator(12);
+    const newKey = new KeyModel({
+        userId: newUser._id,
+        key: key,
+    });
+    console.log(newKey);
     await newUser.save();
+    await newKey.save();
 
     return newUser;
 }
