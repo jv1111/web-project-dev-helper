@@ -5,11 +5,10 @@ axios.defaults.withCredentials = true;// Enable passing credentials on cookies w
 const getSessionAPI = async () => {
     try {
         const response = await axios.get("/auth/login");
-        console.log(response.data);
+        console.log(response);
         return response.data;
     } catch (error) {
-        console.log(error.response.data);
-        return error.response.data
+        return error.message
     }
 }
 
@@ -19,8 +18,7 @@ const logoutApi = async () => {
         console.log(response.data);
         return response.data;
     } catch (error) {
-        console.log(error.response.data);
-        return error.response.data;
+        return error.message
     }
 }
 
