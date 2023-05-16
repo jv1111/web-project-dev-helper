@@ -7,4 +7,9 @@ router.get(
     SystemController.getKey
 );
 
+router.put(
+    "/sendEmail",
+    SystemController.sendEmail
+)
+
 module.exports = router;

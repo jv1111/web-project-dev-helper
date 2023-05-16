@@ -19,7 +19,7 @@ app.use(passport.initialize());
 app.use(passport.session());//enables Passport.js to deserialize the user object from the session data. 
 
 app.use("/auth", require("./routes/AuthRoute.js"));
-app.use("/service", require("./routes/SystemRoute"));
+app.use("/system", require("./routes/SystemRoute"));
 
 app.listen(PORT, () => {
     console.log(`running on port ${PORT}`);

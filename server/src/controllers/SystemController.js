@@ -20,6 +20,22 @@ const getKey = async (req, res) => {
     }
 }
 
+const sendEmail = async (req, res) => {
+    try {
+        const response = await SystemService.sendEmail(req.body);
+        if (response.error) return res.status(400).json({ error: "Error sending message" });
+        res.status(200).json({
+            success: true,
+            message: "Message sent"
+        });
+    } catch (error) {
+        res.status(500).json({
+            error: error.message
+        });
+    }
+}
+
 module.exports = {
-    getKey
+    getKey,
+    sendEmail
 }
