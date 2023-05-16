@@ -6,12 +6,14 @@ import { DisplayBox } from "../../components";
 const MailerPage = () => {
 
     const [key, setKey] = useState(null);
+    const [userKeyVisible, setUserKeyVisible] = useState(false);
     const auth = useSelector(state => state.auth);
     const userId = auth.user.id;
 
     const getKey = async () => {
         const response = await getKeyApi();
         if (response.error) return alert("Cannot get key");
+        setUserKeyVisible(true);
         setKey(response.key);
     }
 
@@ -30,7 +32,12 @@ const MailerPage = () => {
                     Get key
                 </button>
             </div>
-            <DisplayBox userId={userId} userKey={key} />
+            <DisplayBox
+                userId={userId}
+                userKey={key}
+                trigger={userKeyVisible}
+                setTrigger={setUserKeyVisible}
+            />
         </div>
     );
 }

@@ -1,6 +1,6 @@
 import copyText from "../helper/copyText";
 
-const DisplayBox = ({ userId, userKey }) => {
+const DisplayBox = ({ userId, userKey, trigger, setTrigger }) => {
 
     const copyHandler = (text,) => {
         alert(text);
@@ -17,6 +17,8 @@ const DisplayBox = ({ userId, userKey }) => {
                 console.error("Error copying text: ", error);
             });
     }
+
+    if (!trigger) return "";
 
     return (
         <div className="blocker hide display-box">
@@ -40,6 +42,7 @@ const DisplayBox = ({ userId, userKey }) => {
                         Copy
                     </button>
                 </div>
+                <button onClick={() => setTrigger(false)}>Close</button>
             </div>
         </div>
     )
