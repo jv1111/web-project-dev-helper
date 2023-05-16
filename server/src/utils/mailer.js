@@ -2,6 +2,7 @@ const nodemailer = require("nodemailer");
 
 const sendEmail = (sender, receiver, subject, text, html) => {
     let mailOptions;
+    console.log("rec");
     console.log(receiver);
     let transporter = nodemailer.createTransport({
         service: 'gmail',
@@ -24,7 +25,10 @@ const sendEmail = (sender, receiver, subject, text, html) => {
     return new Promise((resolve, reject) => {
         transporter.sendMail(mailOptions, (error, info) => {
             if (error) reject(error)
-            else resolve(info.response);
+            else resolve({
+                success: true,
+                message: info.response
+            });
         });
     });
 }

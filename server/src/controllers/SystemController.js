@@ -3,6 +3,7 @@ const SystemService = require("../services/SystemService");
 const getKey = async (req, res) => {
     try {
         const userId = req.user._id;
+        console.log(userId);
         const response = await SystemService.getKey(userId);
         if (response.error) {
             return res.status(400).json({

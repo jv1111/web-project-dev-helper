@@ -5,12 +5,10 @@ const EmailSchema = mongoose.Schema({
     sender: {
         type: mongoose.SchemaTypes.Email,
         required: true,
-        unique: true
     },
     receiver: {
-        type: mongoose.SchemaType.Email,
+        type: mongoose.SchemaTypes.Email,
         required: true,
-        unique: true
     },
     subject: {
         type: String

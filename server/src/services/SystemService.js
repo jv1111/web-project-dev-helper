@@ -1,4 +1,5 @@
 const KeyModel = require("../models/KeyModel");
+const EmailModel = require("../models/EmailModel");
 const mailer = require("../utils/mailer");
 
 const getKey = async (userId) => {
@@ -11,16 +12,25 @@ const getKey = async (userId) => {
 
 const sendEmail = async (data) => {
     const { sender, receiver, subject, text, html } = data;
-    const response = await mailer(
+    //send emial
+    const mailerResponse = await mailer(
         sender,
         receiver,
         subject,
         text,
         html
     );
-    console.log("here");
-    console.log(response);
-    return { message: "Mail sent" }
+    //create email record
+    const emailRecord = new EmailModel({
+        sender: sender,
+        receiver: receiver,
+        subject: subject,
+        text: text,
+        html: html
+    });
+    await emailRecord.save();
+
+    return { message: mailerResponse.message }
 }
 
 module.exports = {

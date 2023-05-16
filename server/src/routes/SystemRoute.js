@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const SystemController = require("../controllers/SystemController.js");
+const { KeyValidation } = require("../middlewares/KeyValidationMiddleware");
 
 router.get(
     "/key",
@@ -9,7 +10,9 @@ router.get(
 
 router.put(
     "/sendEmail",
-    SystemController.sendEmail
+    KeyValidation,
+    SystemController.sendEmail,
+
 )
 
 module.exports = router;

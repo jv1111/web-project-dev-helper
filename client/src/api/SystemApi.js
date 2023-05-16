@@ -4,7 +4,7 @@ axios.defaults.withCredentials = true;// Enable passing credentials on cookies w
 
 const getKeyApi = async () => {
     try {
-        const response = await axios.get("/service/key");
+        const response = await axios.get("/system/key");
         console.log(response.data);
         return response.data;
     } catch (error) {
