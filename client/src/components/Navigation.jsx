@@ -29,9 +29,9 @@ const Navigation = ({ auth }) => {
                     </Nav>
                     <Nav>
                         {auth.loggedIn ?
-                            <NavDropdown title={
+                            <NavDropdown className='profile-dropdown' title={
                                 <div className='pull-left'>
-                                    <img src={profileImg} alt="" />
+                                    <img className='profile-img' src={profileImg} alt="" />
                                 </div>
                             }
                                 id="navbarScrollingDropdown"

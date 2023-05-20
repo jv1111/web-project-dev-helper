@@ -1,0 +1,118 @@
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+.App {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.welcome-page {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.welcome-page .title {
+    position: relative;
+    bottom: 10%;
+    text-align: center;
+}
+
+.welcome-page .title .line {
+    margin: auto;
+    width: 300px;
+    height: 4px;
+    background-color: black;
+}
+
+.profile-dropdown a img {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    border-radius: 50px;
+    bottom: 0;
+    left: 0;
+}
+
+.mailer-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+    flex-grow: 1;
+}
+
+.tutorial-div {
+    width: 500px;
+    height: 500px;
+    background-color: gainsboro;
+    border-radius: 10px;
+    border: 1px solid black;
+    box-shadow: 3px 3px 3px black;
+    padding: 10px;
+}
+
+.tutorial-box {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.tab-1 {
+    margin-left: 20px;
+}
+
+.blocker {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, .6);
+    display: flex;
+    align-items: center;
+}
+
+.display-box .box {
+    position: relative;
+    display: grid;
+    gap: 10px;
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid white;
+    background-color: black;
+    color: white;
+}
+
+.display-box .box-label{
+    position: relative;
+    display: flex;
+}
+
+.display-box .box-label button{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+
+
+.display-box .inner-box {
+    position: relative;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}

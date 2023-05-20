@@ -23,18 +23,21 @@ const DisplayBox = ({ userId, userKey, trigger, setTrigger }) => {
     return (
         <div className="blocker hide display-box">
             <div className="box">
-                <label>User id: </label>
-                <div className="inner-box">
-                    <label>{userId}</label>
+                <div className="box-label">
+                    <label>User id: </label>
                     <button
                         className="btnCopy"
                         onClick={() => copyHandler(userId)}
                     >Copy
                     </button>
                 </div>
-                <label>Key: </label>
+
                 <div className="inner-box">
-                    <label>{userKey}</label>
+                    <label>{userId}</label>
+                </div>
+
+                <div className="box-label">
+                    <label>Key: </label>
                     <button
                         className="btnCopy"
                         onClick={() => copyHandler(userKey)}
@@ -42,6 +45,11 @@ const DisplayBox = ({ userId, userKey, trigger, setTrigger }) => {
                         Copy
                     </button>
                 </div>
+
+                <div className="inner-box">
+                    <label>{userKey}</label>
+                </div>
+
                 <button onClick={() => setTrigger(false)}>Close</button>
             </div>
         </div>
