@@ -12,6 +12,7 @@ module.exports = session({
     saveUninitialized: true,// Save uninitialized sessions (i.e. with no data)
     store: store, //set storage
     cookie: {
+        domain: "web-jv.online",
         secure: true,
         sameSite: "none",
         httpOnly: true,
